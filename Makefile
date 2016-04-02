@@ -77,3 +77,6 @@ install-rh: install-common
 install-deb: install-common
 	install -D torproject.list $(DESTDIR)/etc/apt/sources.lists.d/torproject.list
 	install -D torprojectarchive.asc $(DESTDIR)/usr/lib/qubes-tor/torprojectarchive.asc
+
+deb:
+	debuild -us -uc

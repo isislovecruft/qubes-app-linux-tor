@@ -1,8 +1,8 @@
 Source: qubes-tor
 Section: admin
 Priority: extra
-Maintainer: Jason Mehring <nrgaway@gmail.com>
-Build-Depends: debhelper (>= 9~), quilt, dh-systemd (>= 1.5)
+Maintainer: Isis Agora Lovecruft <isis@torproject.org>
+Build-Depends: debhelper (>= 9~), quilt, dh-systemd (>= 1.5), devscripts
 Standards-Version: 3.9.5
 Homepage: http://www.qubes-os.org
 
@@ -10,4 +10,5 @@ Package: qubes-tor
 Section: admin
 Architecture: any
 Depends: systemd, tor (>= 0.2.7), ${misc:Depends}
+Recommends: obfs4proxy (>= 0.0.3), tor-arm (>= 1.4.5)
 Description: The Qubes package for running a TorVM

@@ -1,3 +1,11 @@
+qubes-tor (0.2.0) jessie; urgency=high
+
+  * Update upstream tor version from 0.2.3.x to 0.2.7.x
+  * Change firewall rules generation and application to happen separately
+  * Add several systemd hardening options to the qubes-tor service file
+
+ -- Isis Agora Lovecruft <isis@torproject.org>  Sat, 02 Apr 2016 14:33:15 +0000
+
 qubes-tor (0.1.14-1) wheezy; urgency=medium
 
   * Update Tor Project package signing key
