@@ -9,5 +9,5 @@ Homepage: http://www.qubes-os.org
 Package: qubes-tor
 Section: admin
 Architecture: any
-Depends: systemd, tor (>= 0.2.3), ${misc:Depends}
+Depends: systemd, tor (>= 0.2.7), ${misc:Depends}
 Description: The Qubes package for running a TorVM
