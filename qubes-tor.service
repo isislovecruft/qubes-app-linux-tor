@@ -7,9 +7,19 @@ After=network.target qubes-mount-home.service
 Type=forking
 PIDFile=/var/run/tor/qubes-tor.pid
 RemainAfterExit=no
-ExecStart=/usr/lib/qubes-tor/start_tor_proxy.sh
 StandardOutput=syslog
+
+ExecStartPre=/usr/bin/install -Z -m 02750 -o tor -g tor -d /var/run/tor
+ExecStartPre=/usr/bin/sudo /usr/lib/qubes-tor/start_tor_proxy.sh
+ExecStartPre=/usr/bin/tor --defaults-torrc /usr/lib/qubes-tor/torrc -f /rw/config/qubes-tor/torrc --RunAsDaemon 0 --verify-config
+ExecStart=/usr/bin/tor --defaults-torrc /usr/lib/qubes-tor/torrc -f /rw/config/qubes-tor/torrc --RunAsDaemon 1 --Log "notice syslog" --PIDFile /var/run/tor/qubes-tor.pid
+ExecStartPost=/usr/bin/sudo /usr/lib/qubes-tor/qubes-tor-firewall.sh
+ExecReload=/bin/kill -HUP ${MAINPID}
+
+KillSignal=SIGINT
+#TimeoutSec=45
+#Restart=on-failure
+LimitNOFILE=65536
 
 [Install]
 WantedBy=multi-user.target
-

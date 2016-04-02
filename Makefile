@@ -63,6 +63,7 @@ update-repo-unstable:
 
 install-common:
 	install -D start_tor_proxy.sh $(DESTDIR)/usr/lib/qubes-tor/start_tor_proxy.sh
+	install -D qubes-tor-firewall.sh $(DESTDIR)/usr/lib/qubes-tor/qubes-tor-firewall.sh
 	install -D torrc.tpl $(DESTDIR)/usr/lib/qubes-tor/torrc.tpl
 	install -D torrc $(DESTDIR)/usr/lib/qubes-tor/torrc
 	install -D README.md $(DESTDIR)/usr/lib/qubes-tor/README

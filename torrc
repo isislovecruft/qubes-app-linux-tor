@@ -1,2 +1,6 @@
-# qubes-tor
-# This file is auto generated on startup
+# qubes-tor: Default configuration
+###################################################################
+# This file is AUTO-GENERATED on startup by the qubes-tor service #
+#                                                                 #
+# Place your own tor settings in /rw/config/qubes-tor/torrc       #
+###################################################################
