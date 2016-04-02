@@ -1,5 +1,5 @@
 [Unit]
-Description=Qubes transparent tor proxy setup
+Description=Qubes TorVM
 ConditionPathExists=/var/run/qubes-service/qubes-tor
 After=network.target qubes-mount-home.service
 
